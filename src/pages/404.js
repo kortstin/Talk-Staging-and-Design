@@ -2,12 +2,14 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "../../src/components/layout.css"
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="container-fluid">
+      <img src={require("../images/undraw_page_not_found_su7k.svg")} alt="404 Page Not Found"/>
+    </div>
   </Layout>
 )
 
