@@ -25,6 +25,7 @@ const cardStyles = {
     letterSpacing: "1.5px",
     border: 'none',
     cursor: "pointer",
+    marginLeft: '2rem',
   }
   
   const buttonDisabledStyles = {

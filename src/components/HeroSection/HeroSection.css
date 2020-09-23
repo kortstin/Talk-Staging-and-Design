@@ -37,7 +37,7 @@
   
   @media screen and (max-width: 768px) {
     .hero-container > h1 {
-      font-size: 60px;
+      font-size: 40px;
     }
   
     .hero-container > p {
