@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Talk Staging and Design`,
@@ -5,8 +9,16 @@ module.exports = {
     author: `@kortneystinson`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ["Price"],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false,
+              },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
