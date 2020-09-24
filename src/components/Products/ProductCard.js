@@ -113,7 +113,7 @@ const formatPrice = (amount, currency) => {
                 : buttonStyles
                   }
                 >
-            Choose Plan
+                  {loading ? 'Loading...' : 'Choose Plan'}
             </button>            
           </form>
       </div> 
