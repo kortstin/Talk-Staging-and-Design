@@ -25,7 +25,7 @@ const cardStyles = {
     letterSpacing: "1.5px",
     border: 'none',
     cursor: "pointer",
-    marginLeft: '2rem',
+    marginLeft: '3.5rem',
   }
   
   const buttonDisabledStyles = {
@@ -48,6 +48,9 @@ const cardStyles = {
     maxWidth: '3rem',
   }
 
+  const formSelect = {
+    display: 'none',
+  }
 
 
 
@@ -94,18 +97,18 @@ const formatPrice = (amount, currency) => {
               <p style={pricingCardDescription}>{product.description}</p>
             </legend>
             <label>
-              <select name="priceSelect">
+              <select name="priceSelect" style={formSelect}>
                 {product.prices.map(price => (
                   <option key={price.id} value={price.id}>
                     {formatPrice(price.unit_amount, price.currency)}
                   </option>
                 ))}
-                
               </select>
             </label>
           </fieldset>
 
           <button
+            className ="card-button" 
             disabled={loading}
             style={
               loading
@@ -113,7 +116,11 @@ const formatPrice = (amount, currency) => {
                 : buttonStyles
                   }
                 >
-                  {loading ? 'Loading...' : 'Choose Plan'}
+                  {loading ? 'Loading...' : product.prices.map(price => (
+                  <option key={price.id} value={price.id}>
+                    {formatPrice(price.unit_amount, price.currency)}
+                  </option>
+                ))}
             </button>            
           </form>
       </div> 

@@ -4,7 +4,7 @@ export const Button = styled.button`
   border-radius: 4px;
   background: ${({ primary }) => (primary ? "#e8afd6" : "#f00980")};
   white-space: nowrap;
-  padding: ${({ big }) => (big ? "16px 64px" : "10px 20px")};
+  padding: ${({ big }) => (big ? "12px 64px" : "10px 20px")};
   color: #fff;
   font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
   outline: none;
