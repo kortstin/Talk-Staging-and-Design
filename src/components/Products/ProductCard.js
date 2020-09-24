@@ -116,7 +116,11 @@ const formatPrice = (amount, currency) => {
                 : buttonStyles
                   }
                 >
-                  {loading ? 'Loading...' : 'Choose Plan'}
+                  {loading ? 'Loading...' : product.prices.map(price => (
+                  <option key={price.id} value={price.id}>
+                    {formatPrice(price.unit_amount, price.currency)}
+                  </option>
+                ))}
             </button>            
           </form>
       </div> 
