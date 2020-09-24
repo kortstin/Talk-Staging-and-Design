@@ -48,14 +48,6 @@ const cardStyles = {
     maxWidth: '3rem',
   }
 
-  const pricingAmount = {
-    marginBottom: '1rem',
-  }
-
-  const formSelect = {
-    display: 'none',
-  }
-
 
 
 
@@ -100,14 +92,9 @@ const formatPrice = (amount, currency) => {
               <img src={product.images} alt="" style={productImage}/>
               <h4 style={pricingCardPlan}>{product.name}</h4>
               <p style={pricingCardDescription}>{product.description}</p>
-              <p style={pricingAmount}>{product.prices.map(price => (
-                  <option key={price.id} value={price.id}>
-                    {formatPrice(price.unit_amount, price.currency)}
-                  </option>
-                ))}</p>
             </legend>
             <label>
-              <select name="priceSelect" style={formSelect}>
+              <select name="priceSelect">
                 {product.prices.map(price => (
                   <option key={price.id} value={price.id}>
                     {formatPrice(price.unit_amount, price.currency)}
@@ -126,7 +113,7 @@ const formatPrice = (amount, currency) => {
                 : buttonStyles
                   }
                 >
-                  {loading ? 'Loading...' : 'Choose Plan'}
+                  Choose Plan
             </button>            
           </form>
       </div> 
