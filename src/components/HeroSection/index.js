@@ -1,5 +1,6 @@
 import React from "react"
 import { Button } from "../ButtonElements"
+import { Link } from 'gatsby'
 import "./HeroSection.css"
 
 function HeroSection() {
@@ -8,9 +9,11 @@ function HeroSection() {
       <h1>Home Staging</h1>
       <p>Made easier for you </p>
       <div className="hero-btns">
-        <Button fontBig big primary>
-          Get Started
-        </Button>
+        <Link to= "/services">
+          <Button fontBig big primary>
+            Get Started
+          </Button>
+        </Link>
       </div>
     </div>
   )
